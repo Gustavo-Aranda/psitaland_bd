@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   oracle-db:
     image: gvenzl/oracle-xe:21-slim
@@ -7,9 +5,9 @@ services:
     ports:
       - "1521:1521"
     environment:
-      ORACLE_PASSWORD: 123
-      APP_USER: hr
-      APP_USER_PASSWORD: hr
+      - ORACLE_PASSWORD=123
+      - APP_USER=hr
+      - APP_USER_PASSWORD=hr
     volumes:
       - oracle_data:/opt/oracle/oradata
       - ./init-db:/container-entrypoint-initdb.d
